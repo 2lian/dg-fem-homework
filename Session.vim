@@ -16,10 +16,11 @@ endif
 badd +1 ~/dg-fem-homework
 badd +4 LAUNCH.sh
 badd +25 .gitignore
-badd +60 main.tex
+badd +68 main.tex
 badd +9 term://~/dg-fem-homework//3264:/bin/bash
-badd +0 term://~/dg-fem-homework//4667:/bin/bash
-badd +0 fugitive:///home/elian/dg-fem-homework/.git//
+badd +20 term://~/dg-fem-homework//4667:/bin/bash
+badd +1 fugitive:///home/elian/dg-fem-homework/.git//
+badd +0 term://~/dg-fem-homework//36739:/bin/bash
 argglobal
 %argdel
 $argadd ~/dg-fem-homework
@@ -51,9 +52,9 @@ set winwidth=1
 exe '1resize ' . ((&lines * 25 + 26) / 53)
 exe '2resize ' . ((&lines * 25 + 26) / 53)
 exe 'vert 2resize ' . ((&columns * 98 + 98) / 196)
-exe '3resize ' . ((&lines * 1 + 26) / 53)
+exe '3resize ' . ((&lines * 8 + 26) / 53)
 exe 'vert 3resize ' . ((&columns * 97 + 98) / 196)
-exe '4resize ' . ((&lines * 23 + 26) / 53)
+exe '4resize ' . ((&lines * 16 + 26) / 53)
 exe 'vert 4resize ' . ((&columns * 97 + 98) / 196)
 argglobal
 balt ~/dg-fem-homework
@@ -87,12 +88,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 60 - ((4 * winheight(0) + 12) / 25)
+let s:l = 68 - ((6 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 60
-normal! 0518|
+keepjumps 68
+normal! 011|
 lcd ~/dg-fem-homework
 wincmd w
 argglobal
@@ -109,7 +110,7 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 4 - ((0 * winheight(0) + 0) / 1)
+let s:l = 4 - ((1 * winheight(0) + 4) / 8)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -118,11 +119,11 @@ normal! 021|
 lcd ~/dg-fem-homework
 wincmd w
 argglobal
-if bufexists(fnamemodify("term://~/dg-fem-homework//4667:/bin/bash", ":p")) | buffer term://~/dg-fem-homework//4667:/bin/bash | else | edit term://~/dg-fem-homework//4667:/bin/bash | endif
+if bufexists(fnamemodify("term://~/dg-fem-homework//36739:/bin/bash", ":p")) | buffer term://~/dg-fem-homework//36739:/bin/bash | else | edit term://~/dg-fem-homework//36739:/bin/bash | endif
 if &buftype ==# 'terminal'
-  silent file term://~/dg-fem-homework//4667:/bin/bash
+  silent file term://~/dg-fem-homework//36739:/bin/bash
 endif
-balt term://~/dg-fem-homework//3264:/bin/bash
+balt term://~/dg-fem-homework//4667:/bin/bash
 setlocal fdm=expr
 setlocal fde=nvim_treesitter#foldexpr()
 setlocal fmr={{{,}}}
@@ -131,20 +132,20 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 25 - ((22 * winheight(0) + 11) / 23)
+let s:l = 1388 - ((15 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 25
+keepjumps 1388
 normal! 0
 lcd ~/dg-fem-homework
 wincmd w
 exe '1resize ' . ((&lines * 25 + 26) / 53)
 exe '2resize ' . ((&lines * 25 + 26) / 53)
 exe 'vert 2resize ' . ((&columns * 98 + 98) / 196)
-exe '3resize ' . ((&lines * 1 + 26) / 53)
+exe '3resize ' . ((&lines * 8 + 26) / 53)
 exe 'vert 3resize ' . ((&columns * 97 + 98) / 196)
-exe '4resize ' . ((&lines * 23 + 26) / 53)
+exe '4resize ' . ((&lines * 16 + 26) / 53)
 exe 'vert 4resize ' . ((&columns * 97 + 98) / 196)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
