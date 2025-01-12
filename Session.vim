@@ -16,7 +16,7 @@ endif
 badd +1 ~/dg-fem-homework
 badd +4 LAUNCH.sh
 badd +25 .gitignore
-badd +66 main.tex
+badd +62 main.tex
 badd +9 term://~/dg-fem-homework//3264:/bin/bash
 badd +20 term://~/dg-fem-homework//4667:/bin/bash
 badd +1 fugitive:///home/elian/dg-fem-homework/.git//
@@ -88,12 +88,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 60 - ((3 * winheight(0) + 12) / 25)
+let s:l = 62 - ((3 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 60
-normal! 0491|
+keepjumps 62
+normal! 0449|
 lcd ~/dg-fem-homework
 wincmd w
 argglobal
@@ -132,11 +132,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 2918 - ((15 * winheight(0) + 8) / 16)
+let s:l = 3071 - ((15 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 2918
+keepjumps 3071
 normal! 0
 lcd ~/dg-fem-homework
 wincmd w
@@ -162,7 +162,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
