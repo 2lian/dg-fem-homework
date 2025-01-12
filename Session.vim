@@ -16,7 +16,7 @@ endif
 badd +1 ~/dg-fem-homework
 badd +4 LAUNCH.sh
 badd +25 .gitignore
-badd +68 main.tex
+badd +66 main.tex
 badd +9 term://~/dg-fem-homework//3264:/bin/bash
 badd +20 term://~/dg-fem-homework//4667:/bin/bash
 badd +1 fugitive:///home/elian/dg-fem-homework/.git//
@@ -88,12 +88,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 68 - ((6 * winheight(0) + 12) / 25)
+let s:l = 60 - ((3 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 68
-normal! 011|
+keepjumps 60
+normal! 0491|
 lcd ~/dg-fem-homework
 wincmd w
 argglobal
@@ -132,11 +132,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1388 - ((15 * winheight(0) + 8) / 16)
+let s:l = 2918 - ((15 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1388
+keepjumps 2918
 normal! 0
 lcd ~/dg-fem-homework
 wincmd w
