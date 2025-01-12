@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% Page layout
+\geometry{a4paper, margin=1in}
+
+% Custom commands (optional)
+\newcommand{\N}{\mathbb{N}}  % Set of natural numbers
+\newcommand{\R}{\mathbb{R}}  % Set of real numbers
+\newcommand{\Z}{\mathbb{Z}}  % Set of integers
+
+% Title and author information
+\title{Homework: Curvilinear finite element analysis}
+\author{Elian NEPPEL}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Guidance}
+
+Pick up one journal article (either of fluid/solid and any other topic, either numerical scheme or application are fine) for numerical study using a high-order / polynomial-type scheme on unstructured mesh
+
+- Solid: Discontinuous Galerkin, hybridized DG
+
+- Fluid: Discontinuous Galerkin, Flux Reconstruction, Spectral Difference, Spectral Volume
+
+Please summarize the content in one-page A4 paper.
+
+\section*{Chosen paper}
+
+F.D. Witherden, A.M. Farrington, P.E. Vincent,
+PyFR: An open source framework for solving advection–diffusion type problems on streaming architectures using the flux reconstruction approach,
+Computer Physics Communications,
+Volume 185, Issue 11,
+2014,
+Pages 3028-3040,
+ISSN 0010-4655,
+https://doi.org/10.1016/j.cpc.2014.07.011.
+
+\newpage
+\section{Summary}
+
+Tackling high-order numerical methods for fluid advection-diffusion problems, PyFR is an open source flux reconstruction (FR) solver for unstructured mesh.
+Its main strength lies in its deep parallel computing abilities, unlocking tremendous performances thus making it suitable for industrial applications. It is indeed capable of multi CPU computations as well as GPU computations.
+
+In the past Reynolds Averaged Navier–Stokes (RANS) was the main computation method, due to its compute efficiency. However, it does not perform well for separated flow.
+FR however is a new, more capable, high-order general method that encompasses several previously discovered technics such as discontinuous Galerkin or spectral difference. Those high order methods typically require more computations, but much less memory accesses. In opposition to the past, current computing hardware is memory-bound, especially when parallelizing tasks, hence this interest in FR that reduces memory load. Modern hardware also supports deep parallelization with vector processing units and GPU, to leverage this PyFR divides the computation in independent tasks.
+
+PyFR uses typical FR equations, while adding a few steps to improve compute. Notably, normalization and standardization of quantities and elements must be sought after. The goal is to later reduce the number of parameters necessary to the computation kernels, this reduces the memory load by effectively replacing memory transfers with computations. 
+
+Given the resulting equations and aside from a few compile-time or start-time computations, FR can be expressed using solely matrix multiplication and independent point-wise operations. Matrix multiplication are left to highly optimised BLAS libraries. For point-wise operations, the kernels are compiled at runtime and writen an intermediate language developped by PyFR, instead of a distributing a pre-compiled binary. This allows for the best compiler optimization relative to hardware and given problem. Finaly, great care has been take to break down tasks into independent sub-problems that can execute in parallel while keeping memory requirement low.
+
+At the time of the paper, are natively implemented in PyFR: the Euler equations for inviscid compressible flow, and the compressible Navier–Stokes equations for viscous compressible flow. Both require a specific state vector and flux matrix. Navier-Stokes
+
+
+
+\end{document}
