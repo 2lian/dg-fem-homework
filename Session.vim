@@ -14,7 +14,7 @@ else
   set shortmess=aoO
 endif
 badd +1 ~/dg-fem-homework
-badd +4 LAUNCH.sh
+badd +6 LAUNCH.sh
 badd +25 .gitignore
 badd +62 main.tex
 badd +9 term://~/dg-fem-homework//3264:/bin/bash
@@ -88,12 +88,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 62 - ((3 * winheight(0) + 12) / 25)
+let s:l = 19 - ((9 * winheight(0) + 12) / 25)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 62
-normal! 0449|
+keepjumps 19
+normal! 030|
 lcd ~/dg-fem-homework
 wincmd w
 argglobal
@@ -110,12 +110,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 4 - ((1 * winheight(0) + 4) / 8)
+let s:l = 10 - ((1 * winheight(0) + 4) / 8)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 4
-normal! 021|
+keepjumps 10
+normal! 0104|
 lcd ~/dg-fem-homework
 wincmd w
 argglobal
@@ -132,11 +132,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 3071 - ((15 * winheight(0) + 8) / 16)
+let s:l = 3552 - ((15 * winheight(0) + 8) / 16)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 3071
+keepjumps 3552
 normal! 0
 lcd ~/dg-fem-homework
 wincmd w
